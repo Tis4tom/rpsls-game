@@ -1,8 +1,5 @@
-const rock = document.getElementById("rock")
-const paper = document.getElementById("paper")
-const scissors = document.getElementById("scissors")
-const lizard = document.getElementById("lizard")
-const Spock = document.getElementById("Spock")
+
+const gameButtons = document.querySelectorAll(".game-button")
 const computerChoice = document.getElementById("computer-choice")
 const playerChoice = document.getElementById("player-choice")
 const result = document.getElementById("result")
@@ -81,33 +78,14 @@ function displayResult() {
   }
 }
 
+/* Loop over game buttons, add event listener for click, replace player choice text with button clicked text, 
+display computer choice, display result comparing player choice vs computer */
 
-rock.addEventListener("click", function() {
-  playerChoice.innerText = "Rock"
-  computerChoice.innerText = choices[randomChoice()]
-  displayResult()
-})
+for (let gameButton of gameButtons) {
+  gameButton.addEventListener("click", function() {
+    playerChoice.innerText = this.innerText
+    computerChoice.innerText = choices[randomChoice()]
+    displayResult()
+  })
+}
 
-paper.addEventListener("click", function() {
-  playerChoice.innerText = "Paper"
-  computerChoice.innerText = choices[randomChoice()]
-  displayResult()
-})
-
-scissors.addEventListener("click", function() {
-  playerChoice.innerText = "Scissors"
-  computerChoice.innerText = choices[randomChoice()]
-  displayResult()
-})
-
-lizard.addEventListener("click", function() {
-  playerChoice.innerText = "Lizard"
-  computerChoice.innerText = choices[randomChoice()]
-  displayResult()
-})
-
-Spock.addEventListener("click", function() {
-  playerChoice.innerText = "Spock"
-  computerChoice.innerText = choices[randomChoice()]
-  displayResult()
-})
