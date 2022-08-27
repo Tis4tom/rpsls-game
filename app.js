@@ -3,11 +3,29 @@ const gameButtons = document.querySelectorAll(".game-button")
 const computerChoice = document.getElementById("computer-choice")
 const playerChoice = document.getElementById("player-choice")
 const result = document.getElementById("result")
-let choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+const tagLine = document.getElementById("tagline")
+const resultReason = document.getElementById("result-reason")
+const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+const reasons = [
+  "Scissors cut Paper", 
+  "Paper covers Rock",
+  "Rock crushes Lizard",
+  "Lizard poisons Spock",
+  "Spock smashes Scissors",
+  "Scissors cut Lizard",
+  "Lizard eats Paper",
+  "Paper disproves Spock",
+  "Spock vaporizes Rock",
+  "Rock crushes Scissors"
+]
 let cScoreBoard = document.getElementById('c-score-board')
 let cScore = 0
 let pScoreBoard = document.getElementById('p-score-board')
 let pScore = 0
+
+
+tagLine.innerText = reasons.join(', ')
+
 
 cScoreBoard.innerHTML = cScore
 pScoreBoard.innerHTML = pScore
@@ -30,6 +48,7 @@ const lose = () => {
 
 const tie = () => {
   result.innerText = "Tie!"
+  resultReason.innerText = "No point";
 }
 
 function displayResult() {
@@ -37,44 +56,64 @@ function displayResult() {
     tie();
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Paper") {
     lose();
+    resultReason.innerText = reasons[1];
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Spock") {
     lose();
+    resultReason.innerText = reasons[8];
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Scissors") {
     win();
+    resultReason.innerText = reasons[9];
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Lizard") {
     win();
+    resultReason.innerText = reasons[2];
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Scissors") {
     lose();
+    resultReason.innerText = reasons[0];
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Lizard") {
     lose();
+    resultReason.innerText = reasons[6];
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Rock") {
     win();
+    resultReason.innerText = reasons[1];
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Spock") {
     win();
+    resultReason.innerText = reasons[7];
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Rock") {
     lose();
+    resultReason.innerText = reasons[9];
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Spock") {
     lose();
+    resultReason.innerText = reasons[4];
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Paper") {
     win();
+    resultReason.innerText = reasons[0];
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Lizard") {
     win();
+    resultReason.innerText = reasons[5];
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Rock") {
     lose();
+    resultReason.innerText = reasons[2];
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Scissors") {
     lose();
+    resultReason.innerText = reasons[5];
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Paper") {
     win();
+    resultReason.innerText = reasons[6];
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Spock") {
     win();
+    resultReason.innerText = reasons[3];
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Paper") {
     lose();
+    resultReason.innerText = reasons[7];
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Lizard") {
     lose();
+    resultReason.innerText = reasons[3];
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Rock") {
     win();
+    resultReason.innerText = reasons[8];
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Scissors") {
     win();
+    resultReason.innerText = reasons[4];
   }
 }
 
