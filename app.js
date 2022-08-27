@@ -19,91 +19,66 @@ function randomChoice() {
   return Math.floor(Math.random() * choices.length)
 }
 
+const win = () => {
+  result.innerText = "You Win!"
+  pScore++
+  pScoreBoard.innerHTML = pScore 
+}
+
+const lose = () => {
+  result.innerText = "You Lose!"
+  cScore++
+  cScoreBoard.innerHTML = cScore 
+}
+
+const tie = () => {
+  result.innerText = "Tie!"
+}
+
 function displayResult() {
   if (playerChoice.innerText === computerChoice.innerText) {
-    result.innerText = "Tie!"
+    tie();
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Paper") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Spock") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Scissors") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Lizard") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Scissors") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Lizard") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Rock") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Paper" && computerChoice.innerText === "Spock") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Rock") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Spock") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Paper") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Scissors" && computerChoice.innerText === "Lizard") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Rock") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Scissors") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Paper") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Lizard" && computerChoice.innerText === "Spock") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Paper") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Lizard") {
-    result.innerText = "You Lose!"
-    cScore++
-    cScoreBoard.innerHTML = cScore
+    lose();
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Rock") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   } else if (playerChoice.innerText === "Spock" && computerChoice.innerText === "Scissors") {
-    result.innerText = "You Win!"
-    pScore++
-    pScoreBoard.innerHTML = pScore
+    win();
   }
-  
 }
 
 
