@@ -5,23 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Lizard, Spock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-  <p id="tagline"></p>
-      <h2>computer choice: <span id="computer-choice"></span></h2>
-      <h2>player choice: <span id="player-choice"></span></h2>
-      <h2></span>result: <span id="result"></span></h2>
-      <h2></span>reason: <span id="result-reason"></span></h2>
+  <div class="container">
+
+    <div class="game-heading-section">
+      <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+      <p id="tagline"></p>
+      <p class="score-wrapper"><span id="c-score-board"></span></p>
+      <p class="score-wrapper"><span id="p-score-board"></span></p>
+    </div>
+
+    <div class="game-result-section">
+      <h2><span id="computer-choice"></span></h2>
+      <div>
+        <h2><span id="result"></span></h2>
+        <p><span id="result-reason"></span></p>
+      </div>
+      <h2><span id="player-choice"></span></h2>
+    </div>
+    
+    <div class="button-wrapper">
       <button id="rock" class="game-button">Rock</button>
       <button id="paper" class="game-button">Paper</button>
       <button id="scissors" class="game-button">Scissors</button>
       <button id="lizard" class="game-button">Lizard</button>
       <button id="Spock" class="game-button">Spock</button>
-      <div id="container" ></div>
-      <div>Computer Score: <span id="c-score-board"></span></div>
-      <div>Player Score: <span id="p-score-board"></span></div>
+    </div>
+
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

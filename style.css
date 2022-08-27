@@ -1,5 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: midnightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Play', sans-serif;
+}
+
+.container {
+  width: 90%;
+  height: 70vh;
+  max-width: 1000px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 10px;
+}
+
+.game-heading-section {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-result-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+#tagline {
+  font-size: .8rem;
+}
+
+.score-wrapper {
+  display: inline-flex;
+  margin: 25px;
+}
+
+.button-wrapper {
+  flex-direction: row;
+  text-align: center;
+}
+
 button {
     background: lightgreen;
     border: none;
-    padding: 12px;
+    padding: 1%;
+    width: 16%;
+    font-size: 1.3rem;
   }
+
+h1 {
+  font-weight: bold;
+}
+
+#result {
+  font-size: 4rem;
+  color: lightgreen;
+}
+
+#result-reason {
+  font-size: 2rem;
+}

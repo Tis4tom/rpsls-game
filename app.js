@@ -18,17 +18,21 @@ const reasons = [
   "Spock vaporizes Rock",
   "Rock crushes Scissors"
 ]
-let cScoreBoard = document.getElementById('c-score-board')
-let cScore = 0
-let pScoreBoard = document.getElementById('p-score-board')
-let pScore = 0
-
 
 tagLine.innerText = reasons.join(', ')
 
+let cScoreBoard = document.getElementById('c-score-board')
+let pScoreBoard = document.getElementById('p-score-board')
+cScoreBoard.innerHTML = `Computer: 0`
+pScoreBoard.innerHTML = `Player: 0`
+let pScore = 0
+let cScore = 0
 
-cScoreBoard.innerHTML = cScore
-pScoreBoard.innerHTML = pScore
+computerChoice.innerText = "computer choice"
+playerChoice.innerText = "player choice"
+result.innerText = "Choose your weapon"
+resultReason.innerText = "For a chance to say 'Bazinga!'"
+
 
 function randomChoice() {
   return Math.floor(Math.random() * choices.length)
@@ -37,13 +41,13 @@ function randomChoice() {
 const win = () => {
   result.innerText = "You Win!"
   pScore++
-  pScoreBoard.innerHTML = pScore 
+  pScoreBoard.innerHTML = `Player: ${pScore}` 
 }
 
 const lose = () => {
   result.innerText = "You Lose!"
   cScore++
-  cScoreBoard.innerHTML = cScore 
+  cScoreBoard.innerHTML = `Computer: ${cScore}` 
 }
 
 const tie = () => {
