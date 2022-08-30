@@ -117,7 +117,7 @@ function displayResult() {
 
 /* Loop over game buttons, add event listener for click, return random number indexed to choices array
 for computer choice,replace player choice text with button clicked text, 
-display computer and player choice html, execute display functiion to decide winner */
+display computer choice, execute display function to decide winner */
 
 for (let gameButton of gameButtons) {
   const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
