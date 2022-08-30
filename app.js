@@ -3,9 +3,7 @@ const gameButtons = document.querySelectorAll(".game-button")
 const computerChoice = document.getElementById("computer-choice")
 const playerChoice = document.getElementById("player-choice")
 const result = document.getElementById("result")
-const tagLine = document.getElementById("tagline")
 const resultReason = document.getElementById("result-reason")
-const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 const reasons = [
   "Scissors cut Paper", 
   "Paper covers Rock",
@@ -19,7 +17,7 @@ const reasons = [
   "Rock crushes Scissors"
 ]
 
-tagLine.innerText = reasons.join(', ')
+document.getElementById("tagline").innerText = reasons.join(', ')
 
 let cScoreBoard = document.getElementById('c-score-board')
 let pScoreBoard = document.getElementById('p-score-board')
@@ -33,10 +31,6 @@ playerChoice.innerText = "player choice"
 result.innerText = "Choose your weapon"
 resultReason.innerText = "For a chance to say 'Bazinga!'"
 
-
-function randomChoice() {
-  return Math.floor(Math.random() * choices.length)
-}
 
 const win = () => {
   result.innerText = "You Win!"
@@ -52,12 +46,12 @@ const lose = () => {
 
 const tie = () => {
   result.innerText = "Tie!"
-  resultReason.innerText = "No point";
 }
 
 function displayResult() {
   if (playerChoice.innerText === computerChoice.innerText) {
     tie();
+    resultReason.innerText = "No point";
   } else if (playerChoice.innerText === "Rock" && computerChoice.innerText === "Paper") {
     lose();
     resultReason.innerText = reasons[1];
@@ -121,12 +115,17 @@ function displayResult() {
   }
 }
 
-/* Loop over game buttons, add event listener for click, replace player choice text with button clicked text, 
-display computer choice, display result comparing player choice vs computer */
+/* Loop over game buttons, add event listener for click, return random number indexed to choices array
+for computer choice,replace player choice text with button clicked text, 
+display computer and player choice html, execute display functiion to decide winner */
 
 for (let gameButton of gameButtons) {
+  const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   gameButton.addEventListener("click", function() {
-    playerChoice.innerText = this.innerText
+    function randomChoice() {
+      return Math.floor(Math.random() * choices.length)
+    }
+    playerChoice.innerText = this.innerText;
     computerChoice.innerText = choices[randomChoice()]
     displayResult()
   })
